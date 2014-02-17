@@ -6,7 +6,7 @@ package fr.iutvalence.java.tp.morpion;
 public class Morpion
 {
 	/**
-	 * methode qui permet le lancement du jeu 
+	 * methode qui permet le lancement du jeu
 	 */
 	public void jouer()
 	{
