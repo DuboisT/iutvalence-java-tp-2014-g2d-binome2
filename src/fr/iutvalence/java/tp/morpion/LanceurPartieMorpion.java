@@ -12,10 +12,10 @@ public class LanceurPartieMorpion
 	 */
 	public static void main(String[] args)
 	{
-		Morpion game;
-		game = new Morpion();
+		Morpion game = new Morpion();
 		game.jouer();
 	}
+
 }
 
  
