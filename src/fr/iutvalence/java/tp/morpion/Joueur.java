@@ -1,12 +1,6 @@
 package fr.iutvalence.java.tp.morpion;
 
+// TODO écrire un commentaire
 public class Joueur
 {
-
-	public   
-	
-	public void joueur()
-	{
-		this.nom = 
-	}
 }
