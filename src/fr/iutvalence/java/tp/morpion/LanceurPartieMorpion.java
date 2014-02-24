@@ -7,13 +7,12 @@ package fr.iutvalence.java.tp.morpion;
  */
 public class LanceurPartieMorpion
 {
-	// TODO finir d'écrire le commentaire
+	// TODO (done) finir d'écrire le commentaire
 	/**
 	 * creation et lancement d'une partie de morpion
-	 * @param args
-	 * 
+	 * @param args un argument;
 	 */
-	public static void main(String[] args)
+	public static void main()
 	{
 		Morpion game = new Morpion();
 		game.jouer();
