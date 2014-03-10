@@ -1,10 +1,10 @@
 package fr.iutvalence.java.tp.morpion;
 
-/**
- * 
- */
 public class Case
 {
+	/**
+	 * attribut nous donnant l'etat de la case
+	 */
 	private EtatCase etatCase;
 	
 	/**
