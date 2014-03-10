@@ -21,7 +21,7 @@ public class Morpion
 	
 	/**
 	 * Creer une nouvelle partie de morpion prête a jouer
-	 * Creer une grille vide
+	 * Creer une grille de cases
 	 * Prepare deux joueurs
 	 */
 	public Morpion()
