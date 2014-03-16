@@ -6,23 +6,24 @@ package fr.iutvalence.java.tp.morpion;
 public class Morpion
 {
 	/**
-	 * le grille de cette partie
+	 * la grille de la partie
 	 */
 	private Grille grille;
+
 	/**
-	 * le joueur 1 de cette partie
+	 * le joueur 1 de la partie
 	 */
 	private Joueur joueur1;
 	/**
-	 * le joueur 2 de cette partie
+	 * le joueur 2 de la partie
 	 */
 	private Joueur joueur2;
 
-	
+	// TODO écrire un commentaire plus précis (comment est initialisée la
+	// grille)
 	/**
-	 * Creer une nouvelle partie de morpion prête a jouer
-	 * Creer une grille de cases
-	 * Prepare deux joueurs
+	 * Creer une nouvelle partie de morpion prête a jouer Creer une grille de
+	 * cases Prepare deux joueurs
 	 */
 	public Morpion()
 	{
@@ -30,11 +31,9 @@ public class Morpion
 		this.joueur1 = new Joueur("le nom du joueur 1");
 		this.joueur2 = new Joueur("le nom du joueur 2");
 	}
-	
-	
-	// TODO (done) écrire un commentaire plus précis
+
 	/**
-	 * methode qui permet le lancement du jeu  en l'indiquant au joueur 
+	 * methode qui permet le lancement du jeu
 	 */
 	public void jouer()
 	{
@@ -42,5 +41,3 @@ public class Morpion
 	}
 
 }
-
-
