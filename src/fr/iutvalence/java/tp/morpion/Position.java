@@ -12,8 +12,11 @@ public class Position
 	 */
 	private final int numeroDeColonne;
 
+
 	/**
 	 * Construit une nouvelle position avec le numero de la ligne et le numéro de la colonne
+	 * @param numeroDeLigne
+	 * @param numeroDeColonne
 	 */
 	public Position(int numeroDeLigne, int numeroDeColonne)
 	{

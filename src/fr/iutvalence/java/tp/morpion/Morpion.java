@@ -6,41 +6,68 @@ package fr.iutvalence.java.tp.morpion;
 public class Morpion
 {
 	/**
-	 * le grille de cette partie
+	 * Le nombre de ligne de la grille du morpion
 	 */
-	private Grille grille;
+	private static final int NOMBRE_DE_LIGNE = 3;
+	
 	/**
-	 * le joueur 1 de cette partie
+	 * Le nombre de colonne de la grille du morpion
 	 */
-	private Joueur joueur1;
+	private static final int NOMBRE_DE_COLONNE = 3;
+	
 	/**
-	 * le joueur 2 de cette partie
+	 * nombre de cases dans la grille
 	 */
-	private Joueur joueur2;
+	private static final int NOMBRE_DE_CASES = 9;
+	
 
+	
+	/**
+	 *
+	 */
+	private Case[][] cases;
 	
 	/**
 	 * Creer une nouvelle partie de morpion prête a jouer
-	 * Creer une grille de cases
-	 * Prepare deux joueurs
+	 * Creer une grille de case
 	 */
 	public Morpion()
 	{
-		this.grille = new Grille();
-		this.joueur1 = new Joueur("le nom du joueur 1");
-		this.joueur2 = new Joueur("le nom du joueur 2");
+		this.cases = new Case[NOMBRE_DE_LIGNE][NOMBRE_DE_COLONNE];
+		
+		for (int numLigne = 0; numLigne < NOMBRE_DE_LIGNE; numLigne++)
+			for (int numColonne = 0; numColonne < NOMBRE_DE_COLONNE; numColonne++)
+				this.cases[numLigne][numColonne] = new Case(EtatCase.VIDE);
 	}
 	
-	
-	// TODO (done) écrire un commentaire plus précis
+	/**
+	 * @param position position de la case
+	 * @return la position d'une case(numero de ligne et numero de colonne)
+	 */
+	private Case obtenirCase(Position position)
+	{
+		return this.cases[position.obtenirNumeroDeLigne()][position.obtenirNumeroDeColonne()];
+	}
 	/**
 	 * methode qui permet le lancement du jeu  en l'indiquant au joueur 
 	 */
-	public void jouer()
-	{
-		System.out.println("Lancement de la partie");
-	}
 
+
+	public String toString()
+	{
+		String morpionAsciiArt = "";
+		
+		for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNE; numeroDeLigne++)
+		{
+			for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNE; numeroDeColonne++)
+		
+				morpionAsciiArt += this.obtenirCase(new Position(numeroDeLigne,numeroDeColonne));
+			morpionAsciiArt += "\n";
+		}
+		
+		return morpionAsciiArt;
+	}
 }
+
 
 
