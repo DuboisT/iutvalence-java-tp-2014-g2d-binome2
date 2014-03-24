@@ -10,21 +10,30 @@ public class Case
 	/**
 	 * attribut nous donnant l'etat de la case
 	 */
-	private EtatCase etatcase;
+	private EtatCase etat;
 	
 	/**
 	 * Constructeur de Case avec en parametre l'etat de la case
-	 * @param etatCase L'etat de la case
+	 * @param etat L'etat de la case
 	 */
-	public Case(EtatCase etatCase)
+	public Case(EtatCase etat)
 	{
-		this.etatcase = etatCase;
+		this.etat = etat;
 	}
+	
+	/**
+	 * @return l'etat de la case
+	 */
+	public EtatCase obtenirEtat()
+	{
+		return this.etat;
+	}
+
 
 	@Override
 	public String toString()
 	{
-		return this.etatcase.toString();
+		return this.etat.toString();
 	}	
 	
 }

@@ -5,7 +5,6 @@ package fr.iutvalence.java.tp.morpion;
  */
 public enum EtatCase
 {
-//<<<<<<< HEAD
 	/**
 	 * La case est vide
 	 */

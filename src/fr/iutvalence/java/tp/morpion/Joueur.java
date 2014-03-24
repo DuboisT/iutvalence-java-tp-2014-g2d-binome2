@@ -1,5 +1,8 @@
 package fr.iutvalence.java.tp.morpion;
 
+/**
+ * les joueurs de la partie
+ */
 public class Joueur
 {
 		/**

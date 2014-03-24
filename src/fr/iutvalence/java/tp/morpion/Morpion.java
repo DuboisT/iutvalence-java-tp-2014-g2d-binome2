@@ -46,16 +46,18 @@ public class Morpion
 	}
 	
 	
-	public boolean placerSymbole(int ligne, int colonne)
+	/**
+	 * @param position la position ou l'on veut placer un symbole
+	 * @return la possibilité ou non de placer un symbole sur la case ciblée
+	 */
+	public boolean placerSymbole(Position position)
 	{
-		if (EtatCase.Case[ligne][colonne] != Case(EtatCase.VIDE){
-			return false;
-		}
-		else 
-			this.cases[ligne][colonne] = Case(EtatCase.CROIX)
+		obtenirCase(position);
+		String etat = obtenirEtat();
+		
+		
+		
 	}
-	
-	
 	
 	/**
 	 * @param position position de la case
@@ -84,6 +86,13 @@ public class Morpion
 		}
 		
 		return morpionAsciiArt;
+	}
+
+
+	public void jouer()
+	{
+		// TODO Auto-generated method stub
+		
 	}
 }
 
