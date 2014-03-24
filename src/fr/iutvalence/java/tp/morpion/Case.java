@@ -1,5 +1,7 @@
 package fr.iutvalence.java.tp.morpion;
 
+// TODO écrire un commentaire
+// TODO réfléchir à l'utilité de cette classe
 /**
  * Represente les cases
  */
