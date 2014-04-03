@@ -14,7 +14,9 @@ public class LanceurPartieMorpion
 	{
 		Morpion partieDeMorpion = new Morpion();
 		partieDeMorpion.jouer();
+		System.out.println(new Morpion());
 	}
 
 	
 }
+

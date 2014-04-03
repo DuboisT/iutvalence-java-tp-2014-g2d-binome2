@@ -29,8 +29,6 @@ public class Morpion
 	 */
 	private Case[][] cases;
 	
-	// TODO (done) écrire un commentaire plus précis (comment est initialisée la
-	// grille)
 	/**
 	 * Creer une nouvelle partie de morpion prête a jouer
 	 * Creer une grille de case
@@ -42,22 +40,11 @@ public class Morpion
 		
 		for (int numLigne = 0; numLigne < NOMBRE_DE_LIGNE; numLigne++)
 			for (int numColonne = 0; numColonne < NOMBRE_DE_COLONNE; numColonne++)
-				this.cases[numLigne][numColonne] = new Case(EtatCase.VIDE);
+				this.cases[numLigne][numColonne] = new Case();
 	}
 	
 	
-	/**
-	 * @param position la position ou l'on veut placer un symbole
-	 * @return la possibilité ou non de placer un symbole sur la case ciblée
-	 */
-	public boolean placerSymbole(Position position)
-	{
-		obtenirCase(position);
-		String etat = obtenirEtat();
-		
-		
-		
-	}
+	
 	
 	/**
 	 * @param position position de la case
@@ -89,9 +76,15 @@ public class Morpion
 	}
 
 
+	/**
+	 * methode pour jouer au morpion
+	 */
 	public void jouer()
 	{
-		// TODO Auto-generated method stub
+		new Morpion();
+		System.out.println("Lancement de la partie, le joueur CROIX commence: "
+				+ "\nbonne chance !" + "\n    0      1      2" + "\n0|_0,0_||_0,1_||_0,2_|\n1|_1,0_||_1,1_||_1,2_| Voici un exemple de grille pour les coordonnées\n2|_2,0_||_2,1_||_2,2_|\n\n");
+	
 		
 	}
 }

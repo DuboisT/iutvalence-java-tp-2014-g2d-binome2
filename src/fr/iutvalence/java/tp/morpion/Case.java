@@ -11,16 +11,16 @@ public class Case
 	 * attribut nous donnant l'etat de la case
 	 */
 	private EtatCase etat;
-	
+
 	/**
-	 * Constructeur de Case avec en parametre l'etat de la case
-	 * @param etat L'etat de la case
+	 * Constructeur de Case en l'initialisant a l'état VIDE
 	 */
-	public Case(EtatCase etat)
+	public Case()
 	{
-		this.etat = etat;
+		this.etat = EtatCase.VIDE;
+
 	}
-	
+
 	/**
 	 * @return l'etat de la case
 	 */
@@ -29,11 +29,33 @@ public class Case
 		return this.etat;
 	}
 
+	/**
+	 * 
+	 */
 
-	@Override
 	public String toString()
 	{
 		return this.etat.toString();
-	}	
-	
+	}
+
+	/**
+	 * @return si la case est vide ou non
+	 */
+	public boolean estOccupe()
+	{
+		if (this.etat == EtatCase.VIDE)
+			return false;
+		return true;
+	}
+
+	/**
+	 * @param etat
+	 *            methode qui permet de modifier l'etat de la case en y mettant
+	 *            un symbole
+	 */
+	public void modifierEtatCase(EtatCase etat)
+	{
+		this.etat = etat;
+	}
+
 }

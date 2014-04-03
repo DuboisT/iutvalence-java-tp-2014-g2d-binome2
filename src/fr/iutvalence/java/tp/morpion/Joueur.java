@@ -8,12 +8,12 @@ public class Joueur
 		/**
 		 * le nom du joueur de la partie
 		 */
-		private final String nomDeJoueur;
+		public String nomDeJoueur;
 		
 		/**
 		 * le symbole associé au joueur en début de partie
 		 */
-		private final String symbole;
+		public final Symbole symbole;
 	
 
 	
@@ -22,12 +22,13 @@ public class Joueur
 	 * @param nomDeJoueur nom du joueur
 	 * @param symbole le symbole associé au joueur
 	 */
-	public Joueur(String nomDeJoueur, String symbole)
+	public Joueur(String nomDeJoueur, Symbole symbole)
 	{
 		this.nomDeJoueur = nomDeJoueur;
 		this.symbole = symbole;
 	}
 	
+	     
 	/**
 	 * @return le nom d'un joueur
 	 */
@@ -40,7 +41,15 @@ public class Joueur
 	/**
 	 * @return le symbole du joueur
 	 */
-	public String obtenirSymboleJoueur()
+	public Symbole obtenirSymboleJoueur()
+	{
+		return this.symbole;
+	}
+
+	/**
+	 * @return le symbole
+	 */
+	public Symbole getSymbole()
 	{
 		return this.symbole;
 	}
