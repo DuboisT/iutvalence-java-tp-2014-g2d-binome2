@@ -37,11 +37,20 @@ public class Morpion
 	 */
 	private int nbCoup;
 
+	/**
+	 * attribut nous donnant l'etat de la case
+	 */
+	private EtatCase etat;
 
 	/**
 	 * 
 	 */
-	private Case[][] cases;
+	private EtatCase[][] cases;
+
+	private int numLigne;
+	
+	private int numColonne;
+	
 	
 	/**
 	 * Creer une nouvelle partie de morpion prête a jouer
@@ -50,22 +59,31 @@ public class Morpion
 	 */
 	public Morpion()
 	{
-		this.cases = new Case[NOMBRE_DE_LIGNE][NOMBRE_DE_COLONNE];
+		this.cases = new EtatCase[NOMBRE_DE_LIGNE][NOMBRE_DE_COLONNE];
 		
 		for (int numLigne = 0; numLigne < NOMBRE_DE_LIGNE; numLigne++)
 			for (int numColonne = 0; numColonne < NOMBRE_DE_COLONNE; numColonne++)
-				this.cases[numLigne][numColonne] = new Case();
+				this.cases[numLigne][numColonne] = EtatCase.VIDE;
 	}
 	
 	
-	
+	/**
+	 * @return si la case est vide ou non
+	 */
+	public boolean estOccupe()
+	{
+		if (this.etat == EtatCase.VIDE)
+			return false;
+		return true;
+	}
+
 	
 	/**
 	 * @return True si il y a victoire, false dans le cas inverse
 	 */
 	public boolean rechercheVictoire1()
 	{	
-		if ((this.cases[0][0].obtenirEtat() == this.cases[0][1].obtenirEtat()) && (this.cases[0][0].obtenirEtat() == this.cases[0][2].obtenirEtat()) && (this.cases[0][0].obtenirEtat() != EtatCase.VIDE) );
+		if ((this.cases[0][0] == this.cases[0][1]) && (this.cases[0][0] == this.cases[0][2]) && (this.cases[0][0]!= EtatCase.VIDE) );
 			return true;
 	}
 	/**
@@ -73,7 +91,7 @@ public class Morpion
 	 */
 	public boolean rechercheVictoire2()
 	{
-		if ((this.cases[1][0].obtenirEtat() == this.cases[1][1].obtenirEtat()) && (this.cases[1][0].obtenirEtat() == this.cases[1][2].obtenirEtat()) && (this.cases[1][0].obtenirEtat() != EtatCase.VIDE) );
+		if ((this.cases[1][0] == this.cases[1][1]) && (this.cases[1][0] == this.cases[1][2]) && (this.cases[1][0] != EtatCase.VIDE) );
 		return true;
 	}
 	
@@ -82,7 +100,7 @@ public class Morpion
 	 */
 	public boolean rechercheVictoire3()
 	{
-		if ((this.cases[2][0].obtenirEtat() == this.cases[2][1].obtenirEtat()) && (this.cases[2][0].obtenirEtat() == this.cases[2][2].obtenirEtat()) && (this.cases[2][0].obtenirEtat() != EtatCase.VIDE) );
+		if ((this.cases[2][0] == this.cases[2][1]) && (this.cases[2][0] == this.cases[2][2]) && (this.cases[2][0] != EtatCase.VIDE) );
 		return true;
 	}
 	/**
@@ -90,7 +108,7 @@ public class Morpion
 	 */
 	public boolean rechercheVictoire4()
 	{
-		if ((this.cases[0][0].obtenirEtat() == this.cases[1][0].obtenirEtat()) && (this.cases[0][0].obtenirEtat() == this.cases[2][0].obtenirEtat()) && (this.cases[0][0].obtenirEtat() != EtatCase.VIDE) );
+		if ((this.cases[0][0] == this.cases[1][0]) && (this.cases[0][0] == this.cases[2][0]) && (this.cases[0][0] != EtatCase.VIDE) );
 		return true;
 	}
 	/**
@@ -98,7 +116,7 @@ public class Morpion
 	 */
 	public boolean rechercheVictoire5()
 	{
-		if ((this.cases[0][1].obtenirEtat() == this.cases[1][1].obtenirEtat()) && (this.cases[0][1].obtenirEtat() == this.cases[2][1].obtenirEtat()) && (this.cases[0][1].obtenirEtat() != EtatCase.VIDE) );
+		if ((this.cases[0][1] == this.cases[1][1]) && (this.cases[0][1] == this.cases[2][1]) && (this.cases[0][1] != EtatCase.VIDE) );
 		return true;
 	}
 	/**
@@ -106,7 +124,7 @@ public class Morpion
 	 */
 	public boolean rechercheVictoire6()
 	{
-		if ((this.cases[0][2].obtenirEtat() == this.cases[1][2].obtenirEtat()) && (this.cases[0][2].obtenirEtat() == this.cases[2][2].obtenirEtat()) && (this.cases[0][2].obtenirEtat() != EtatCase.VIDE) );
+		if ((this.cases[0][2] == this.cases[1][2]) && (this.cases[0][2] == this.cases[2][2]) && (this.cases[0][2] != EtatCase.VIDE) );
 		return true;
 	}
 	/**
@@ -114,7 +132,7 @@ public class Morpion
 	 */
 	public boolean rechercheVictoire7()
 	{
-		if ((this.cases[0][0].obtenirEtat() == this.cases[1][1].obtenirEtat()) && (this.cases[0][0].obtenirEtat() == this.cases[2][2].obtenirEtat()) && (this.cases[0][0].obtenirEtat() != EtatCase.VIDE) );
+		if ((this.cases[0][0] == this.cases[1][1]) && (this.cases[0][0] == this.cases[2][2]) && (this.cases[0][0] != EtatCase.VIDE) );
 		return true;
 	}
 	/**
@@ -122,7 +140,7 @@ public class Morpion
 	 */
 	public boolean rechercheVictoire8()
 	{
-		if ((this.cases[0][2].obtenirEtat() == this.cases[1][1].obtenirEtat()) && (this.cases[0][2].obtenirEtat() == this.cases[2][0].obtenirEtat()) && (this.cases[1][1].obtenirEtat() != EtatCase.VIDE) );
+		if ((this.cases[0][2] == this.cases[1][1]) && (this.cases[0][2] == this.cases[2][0]) && (this.cases[1][1] != EtatCase.VIDE) );
 		return true;
 	}
 	
@@ -148,7 +166,17 @@ public class Morpion
 	}
 	
 	
-	
+	/**
+	 * @param numLigne .
+	 * @param numColonne .
+	 */
+	public void poserSymbole(int numLigne, int numColonne)
+	{
+		if (Joueur.symbole == Symbole.CROIX)
+			this.cases[numLigne][numColonne] = EtatCase.CROIX;
+		else
+			this.cases[numLigne][numColonne] = EtatCase.ROND;
+	}
 	
 	
 	
@@ -157,7 +185,7 @@ public class Morpion
 	 * @param position position de la case
 	 * @return la position d'une case(numero de ligne et numero de colonne)
 	 */
-	private Case obtenirCase(Position position)
+	private EtatCase obtenirCase(Position position)
 	{
 		return this.cases[position.obtenirNumeroDeLigne()][position.obtenirNumeroDeColonne()];
 	}
@@ -182,24 +210,26 @@ public class Morpion
 		return morpionAsciiArt;
 	}
 
+	public void set(int numLigne)
+	{
+		this.numLigne = numLigne;
+	}
 
 	/**
 	 * methode pour jouer au morpion
 	 */
 	public void jouer()
 	{
-		new Morpion();
 		System.out.println("Lancement de la partie, le joueur CROIX commence: "
 				+ "\nbonne chance !" + "\n    0      1      2" + "\n0|_0,0_||_0,1_||_0,2_|\n1|_1,0_||_1,1_||_1,2_| Voici un exemple de grille pour les coordonnées\n2|_2,0_||_2,1_||_2,2_|\n\n");
-		//while (this.nbCoup < NOMBRE_DE_COUPS_POSSIBLES)
-			
-			
-				
-			
+		while (this.nbCoup < NOMBRE_DE_COUPS_POSSIBLES)
+			if (this.nbCoup % 2 != 0)
+				Joueur.symbole = Symbole.CROIX;
+		
+				poserSymbole(numLigne,numColonne);
+		
 			
 
-			
-		
 	}
 }
 

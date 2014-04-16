@@ -14,5 +14,6 @@ public enum Symbole
 	 * Le joueur a pour symbole le rond (O)
 	 */
 	ROND;
+
 }
 

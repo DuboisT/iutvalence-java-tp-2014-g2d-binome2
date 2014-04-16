@@ -3,6 +3,9 @@ package fr.iutvalence.java.tp.morpion;
 /**
  * Application permettant de lancer une partie de morpion
  */
+
+
+
 public class LanceurPartieMorpion
 {
 	// TODO (done) finir d'écrire le commentaire
@@ -14,7 +17,8 @@ public class LanceurPartieMorpion
 	{
 		Morpion partieDeMorpion = new Morpion();
 		partieDeMorpion.jouer();
-		System.out.println(new Morpion());
+		System.out.println(partieDeMorpion);
+		
 	}
 
 	

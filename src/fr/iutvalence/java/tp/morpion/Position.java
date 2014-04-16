@@ -27,6 +27,7 @@ public class Position
 		this.numeroDeColonne = numeroDeColonne;
 	}
 
+	
 	/**
 	 * @return le numero de la ligne
 	 */

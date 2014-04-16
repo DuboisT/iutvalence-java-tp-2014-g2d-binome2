@@ -13,7 +13,7 @@ public class Joueur
 		/**
 		 * le symbole associé au joueur en début de partie
 		 */
-		public final Symbole symbole;
+		public static Symbole symbole;
 	
 
 	
@@ -25,7 +25,7 @@ public class Joueur
 	public Joueur(String nomDeJoueur, Symbole symbole)
 	{
 		this.nomDeJoueur = nomDeJoueur;
-		this.symbole = symbole;
+		Joueur.symbole = symbole;
 	}
 	
 	     
@@ -43,7 +43,7 @@ public class Joueur
 	 */
 	public Symbole obtenirSymboleJoueur()
 	{
-		return this.symbole;
+		return Joueur.symbole;
 	}
 
 	/**
@@ -51,6 +51,6 @@ public class Joueur
 	 */
 	public Symbole getSymbole()
 	{
-		return this.symbole;
+		return Joueur.symbole;
 	}
 }
