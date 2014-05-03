@@ -5,27 +5,17 @@ package fr.iutvalence.java.tp.morpion;
  */
 public class Morpion
 {
-	
 	/**
-	 * Initialisation du symbole du joueur 1 en Croix
-	 */
-	public final Symbole SYMBOLE_JOUEUR_1 = Symbole.CROIX;
-	
-	/**
-	 * Initialisation du symbole du joueur 2 en Rond
-	 */
-	public final Symbole SYMBOLE_JOUEUR_2 = Symbole.ROND;
-	/**
-	 * Le nombre de ligne de la grille du morpion
-	 */
-
-	private static final int NOMBRE_DE_LIGNE = 3;
-	
-	/**
-	 * Le nombre de colonne de la grille du morpion
+	 * Le nombre de lignes de la grille du morpion
 	 * 
 	 */
-	private static final int NOMBRE_DE_COLONNE = 3;
+	private static final int NOMBRE_DE_LIGNES = 3;
+	
+	/**
+	 * Le nombre de colonnes de la grille du morpion
+	 * 
+	 */
+	private static final int NOMBRE_DE_COLONNES = 3;
 	
 	/**
 	 * nombre de cases dans la grille
@@ -35,23 +25,13 @@ public class Morpion
 	/**
 	 * Le nombre de coup joués depuis le début de la partie
 	 */
-	private int nbCoup;
+	private int nombreDeCoupsJoues;
 
 	/**
-	 * attribut nous donnant l'etat de la case
-	 */
-	private EtatCase etat;
-
-	/**
-	 * 
+	 * La grille
 	 */
 	private EtatCase[][] cases;
 
-	private int numLigne;
-	
-	private int numColonne;
-	
-	
 	/**
 	 * Creer une nouvelle partie de morpion prête a jouer
 	 * Creer une grille de case
@@ -59,10 +39,10 @@ public class Morpion
 	 */
 	public Morpion()
 	{
-		this.cases = new EtatCase[NOMBRE_DE_LIGNE][NOMBRE_DE_COLONNE];
+		this.cases = new EtatCase[NOMBRE_DE_LIGNES][NOMBRE_DE_COLONNES];
 		
-		for (int numLigne = 0; numLigne < NOMBRE_DE_LIGNE; numLigne++)
-			for (int numColonne = 0; numColonne < NOMBRE_DE_COLONNE; numColonne++)
+		for (int numLigne = 0; numLigne < NOMBRE_DE_LIGNES; numLigne++)
+			for (int numColonne = 0; numColonne < NOMBRE_DE_COLONNES; numColonne++)
 				this.cases[numLigne][numColonne] = EtatCase.VIDE;
 	}
 	
@@ -199,9 +179,9 @@ public class Morpion
 	{
 		String morpionAsciiArt = "";
 		
-		for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNE; numeroDeLigne++)
+		for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNES; numeroDeLigne++)
 		{
-			for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNE; numeroDeColonne++)
+			for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNES; numeroDeColonne++)
 		
 				morpionAsciiArt += this.obtenirCase(new Position(numeroDeLigne,numeroDeColonne));
 			morpionAsciiArt += "\n";
@@ -222,8 +202,8 @@ public class Morpion
 	{
 		System.out.println("Lancement de la partie, le joueur CROIX commence: "
 				+ "\nbonne chance !" + "\n    0      1      2" + "\n0|_0,0_||_0,1_||_0,2_|\n1|_1,0_||_1,1_||_1,2_| Voici un exemple de grille pour les coordonnées\n2|_2,0_||_2,1_||_2,2_|\n\n");
-		while (this.nbCoup < NOMBRE_DE_COUPS_POSSIBLES)
-			if (this.nbCoup % 2 != 0)
+		while (this.nombreDeCoupsJoues < NOMBRE_DE_COUPS_POSSIBLES)
+			if (this.nombreDeCoupsJoues % 2 != 0)
 				Joueur.symbole = Symbole.CROIX;
 		
 				poserSymbole(numLigne,numColonne);

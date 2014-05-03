@@ -5,34 +5,33 @@ package fr.iutvalence.java.tp.morpion;
  */
 public class Joueur
 {
-		/**
-		 * le nom du joueur de la partie
-		 */
-		public String nomDeJoueur;
-		
-		/**
-		 * le symbole associé au joueur en début de partie
-		 */
-		public static Symbole symbole;
-	
-
-	
-	
 	/**
-	 * @param nomDeJoueur nom du joueur
-	 * @param symbole le symbole associé au joueur
+	 * le nom du joueur de la partie
+	 */
+	private final String nomDeJoueur;
+
+	/**
+	 * le symbole associé au joueur 
+	 */
+	private final Symbole symbole;
+
+	/**
+	 * Creation d'un joueur de nom et de symbole donnés
+	 * @param nomDeJoueur
+	 *            nom du joueur
+	 * @param symbole
+	 *            le symbole associé au joueur
 	 */
 	public Joueur(String nomDeJoueur, Symbole symbole)
 	{
 		this.nomDeJoueur = nomDeJoueur;
-		Joueur.symbole = symbole;
+		this.symbole = symbole;
 	}
-	
-	     
+
 	/**
 	 * @return le nom d'un joueur
 	 */
-	public String obtenirNomJoueur()
+	public String obtenirNom()
 	{
 		return this.nomDeJoueur;
 
@@ -41,16 +40,8 @@ public class Joueur
 	/**
 	 * @return le symbole du joueur
 	 */
-	public Symbole obtenirSymboleJoueur()
+	public Symbole obtenirSymbole()
 	{
-		return Joueur.symbole;
-	}
-
-	/**
-	 * @return le symbole
-	 */
-	public Symbole getSymbole()
-	{
-		return Joueur.symbole;
+		return this.symbole;
 	}
 }

@@ -29,6 +29,7 @@ public class Position
 
 	
 	/**
+	 * Obtenir le numero de la ligne
 	 * @return le numero de la ligne
 	 */
 	public int obtenirNumeroDeLigne()
@@ -37,6 +38,7 @@ public class Position
 	}
 
 	/**
+	 * Obtenir le numero de la colonne
 	 * @return le numero de la colonne
 	 */
 	public int obtenirNumeroDeColonne()
